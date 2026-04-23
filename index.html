@@ -1,31 +1,31 @@
 <!doctype html>
 <html>
 <head>
-  <title>FruitPop</title>
+  <title>Fruit Pop Pop</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta id="gameViewport" name="viewport" content="width=device-width initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="icon" href="data:,">
   <link href="styles.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+<!-- Loading screen (removed when game starts) -->
+<div id="loading-screen">
+  <div id="loading-title">Fruit Pop Pop</div>
+  <div id="loading-bar-bg">
+    <div id="loading-bar-fill"></div>
+  </div>
+  <div id="loading-text">Loading...</div>
+</div>
 
 <div align="center" id="embed-html"></div>
 <script type="text/javascript" src="html/html.nocache.js"></script>
-</body>
 
 <script>
-function handleMouseDown(evt) {
-  evt.preventDefault();
-  evt.stopPropagation();
-  window.focus();
-}
-
-function handleMouseUp(evt) {
-  evt.preventDefault();
-  evt.stopPropagation();
-}
-document.addEventListener('contextmenu', event => event.preventDefault());
-document.getElementById('embed-html').addEventListener('mousedown', handleMouseDown, false);
-document.getElementById('embed-html').addEventListener('mouseup', handleMouseUp, false);
+document.addEventListener('contextmenu', e => e.preventDefault());
+var embed = document.getElementById('embed-html');
+embed.addEventListener('mousedown', function(e) { e.preventDefault(); e.stopPropagation(); window.focus(); }, false);
+embed.addEventListener('mouseup', function(e) { e.preventDefault(); e.stopPropagation(); }, false);
 </script>
+</body>
 </html>
